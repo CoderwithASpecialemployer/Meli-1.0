@@ -1,1 +1,14 @@
-
+änderungsschneiderei-meli/
+│
+├── index.html
+├── style.css
+├── script.js
+│
+└── assets/
+    └── images/
+        ├── hero.jpg           # Hintergrundbild der Hero‑Sektion
+        ├── logo-meli.png      # Dein Logo (PNG oder SVG)
+        ├── workshop1.jpg      # Galerie‑Bild 1
+        ├── fabric1.jpg        # Galerie‑Bild 2
+        ├── machine1.jpg       # Galerie‑Bild 3
+        └── detail1.jpg        # Galerie‑Bild 4
