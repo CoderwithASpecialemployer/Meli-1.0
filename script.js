@@ -1,21 +1,15 @@
-// Mobile‐Nav Toggle
-const navToggle = document.querySelector('.nav-toggle');
-const siteNav   = document.querySelector('.site-nav');
-navToggle.addEventListener('click', () => siteNav.classList.toggle('open'));
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
 
-// Smooth Scroll für Ankerlinks
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const tgt = document.querySelector(link.getAttribute('href'));
-    if (tgt) tgt.scrollIntoView({ behavior: 'smooth' });
-    siteNav.classList.remove('open');
+  sections.forEach(section => {
+    section.classList.add('hidden');
+    observer.observe(section);
   });
-});
-
-// Night Mode Toggle
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', () => {
-  document.documentElement.classList.toggle('dark');
-  themeToggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
 });
