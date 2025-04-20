@@ -5,7 +5,7 @@ toggle.addEventListener('click', () => {
   menu.classList.toggle('open');
 });
 
-// Scroll‑Fade‑In mit Intersection Observer
+// Scroll‑Fade‑In mit Intersection Observer API  [oai_citation_attribution:15‡MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API?utm_source=chatgpt.com) [oai_citation_attribution:16‡MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver?utm_source=chatgpt.com)
 document.addEventListener('DOMContentLoaded', () => {
   const els = document.querySelectorAll('.section, .hero-content, .card, .gallery img');
   const obs = new IntersectionObserver((entries, observer) => {
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Teilen-Funktion
+// Teilen‑Feature via Web Share API  [oai_citation_attribution:17‡MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Web_Share_API?utm_source=chatgpt.com)
 const shareBtn = document.getElementById('shareBtn');
 if (shareBtn) {
   shareBtn.addEventListener('click', async () => {
@@ -43,7 +43,7 @@ if (shareBtn) {
   });
 }
 
-// Kontaktformular‑Mockup
+// Kontaktformular‑Mockup (nur lokal)  [oai_citation_attribution:18‡MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/How_to/Share_data_between_apps?utm_source=chatgpt.com)
 const form = document.querySelector('.contact-form');
 if (form) {
   form.addEventListener('submit', e => {
