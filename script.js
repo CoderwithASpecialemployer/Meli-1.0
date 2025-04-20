@@ -7,7 +7,7 @@ toggle.addEventListener('click', () => {
 
 // Scroll‑Fade‑In mit Intersection Observer
 document.addEventListener('DOMContentLoaded', () => {
-  const els = document.querySelectorAll('.section, .hero-content, .card');
+  const els = document.querySelectorAll('.section, .hero-content, .card, .gallery img');
   const obs = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -28,7 +28,7 @@ if (shareBtn) {
   shareBtn.addEventListener('click', async () => {
     const data = {
       title: 'Änderungsschneiderei Meli',
-      text: 'Entdecke die Änderungsschneiderei Meli in Aachen!',
+      text: 'Entdecke die Änderungsschneiderei Meli in Recklinghausen!',
       url: window.location.href
     };
     if (navigator.share) {
