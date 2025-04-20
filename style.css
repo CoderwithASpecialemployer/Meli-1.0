@@ -8,7 +8,7 @@
   --transition: 0.3s ease;
 }
 .dark {
-  --bg: #1e1e1e;
+  --bg: #1e1e1e; 
   --text: #e0e0e0;
   --heading: #ffffff;
   --accent: #ff4d4d;
