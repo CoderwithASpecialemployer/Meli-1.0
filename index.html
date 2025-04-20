@@ -4,103 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Änderungsschneiderei Meli</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#" class="logo">Meli</a>
-      <div class="header-buttons">
-        <button id="themeToggle" class="btn-icon" aria-label="Night Mode umschalten">🌙</button>
-        <button class="nav-toggle" aria-label="Menü öffnen">☰</button>
-      </div>
-      <nav class="site-nav">
-        <ul>
-          <li><a href="#hero">Start</a></li>
-          <li><a href="#craft-style">Handwerk & Stil</a></li>
-          <li><a href="#services">Leistungen</a></li>
-          <li><a href="#contact">Kontakt</a></li>
-        </ul>
-      </nav>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">Meli</div>
+      <ul class="nav-links">
+        <li><a href="#about">Über uns</a></li>
+        <li><a href="#services">Leistungen</a></li>
+        <li><a href="#location">Standort</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>Änderungsschneiderei Meli</h1>
+      <p>Stilvolle Passform, meisterhafte Handarbeit</p>
     </div>
   </header>
 
-  <section id="hero" class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content container">
-      <div class="hero-text">
-        <h1>Handwerk & Stil vereint</h1>
-        <p>Perfekte Änderungen & Maßanfertigungen in Recklinghausen</p>
-        <a href="#contact" class="btn btn-primary">Kontakt aufnehmen</a>
-      </div>
-      <div class="hero-img">
-        <img src="img/hero.jpg" alt="Schneider bei der Arbeit">
-      </div>
-    </div>
+  <section id="about" class="section">
+    <h2>Über uns</h2>
+    <p>Mit Liebe zum Detail und langjähriger Erfahrung kümmern wir uns um Ihre Kleidungsstücke. Ihre Zufriedenheit ist unser Maßstab.</p>
   </section>
 
-  <section id="craft-style" class="craft-style container">
-    <div class="craft-grid">
-      <div class="craft-img">
-        <img src="img/craft-style.jpg" alt="Handwerk & Stil">
-      </div>
-      <div class="craft-text">
-        <h2>Handwerk & Stil</h2>
-        <p>Wir verbinden traditionelles Schneiderhandwerk mit modernem Design – für Kleidung, die perfekt sitzt und strahlt.</p>
-      </div>
-    </div>
+  <section id="services" class="section parallax">
+    <h2>Unsere Leistungen</h2>
+    <ul>
+      <li>Kleider- und Hosenkürzungen</li>
+      <li>Maßanpassungen</li>
+      <li>Reißverschluss-Reparaturen</li>
+      <li>Maßanfertigungen</li>
+      <li>Abendmode & Brautkleider</li>
+    </ul>
   </section>
 
-  <section id="services" class="services container">
-    <h2>Leistungen</h2>
-    <div class="services-grid">
-      <article class="service-card">
-        <img src="img/changes.jpg" alt="Änderungen">
-        <h3>Änderungen</h3>
-        <p>Passgenaue Anpassungen für jedes Kleidungsstück.</p>
-      </article>
-      <article class="service-card">
-        <img src="img/tailoring.jpg" alt="Maßanfertigung">
-        <h3>Maßanfertigung</h3>
-        <p>Einzelstücke, perfekt auf Sie zugeschnitten.</p>
-      </article>
-      <article class="service-card">
-        <img src="img/style-consult.jpg" alt="Stilberatung">
-        <h3>Stilberatung</h3>
-        <p>Kompetente Beratung für Schnitt, Stoff und Stil.</p>
-      </article>
-    </div>
+  <section id="location" class="section">
+    <h2>Unser Standort</h2>
+    <p>Adresse: Musterstraße 123, 52062 Aachen</p>
+    <iframe src="https://maps.google.com/maps?q=Aachen&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
   </section>
 
-  <section id="contact" class="contact container">
-    <h2>Kontakt & Öffnungszeiten</h2>
-    <div class="contact-grid">
-      <div class="contact-img">
-        <img src="img/contact.jpg" alt="Kontakt Schneiderei">
-      </div>
-      <div class="contact-info">
-        <p><strong>Adresse:</strong><br>Castroper Str. 11<br>45665 Recklinghausen</p>
-        <p><strong>Telefon:</strong><br>02361 123456</p>
-        <p><strong>E‑Mail:</strong><br>info@meli.de</p>
-        <p><a href="https://maps.google.com?q=Castroper+Str.+11+45665+Recklinghausen" target="_blank" class="btn btn-secondary">Anfahrt anzeigen</a></p>
-      </div>
-      <div class="contact-times">
-        <table>
-          <tr><td>Mo–Fr</td><td>10:00–13:00<br>14:00–18:00</td></tr>
-          <tr><td>Sa</td><td>10:00–13:00</td></tr>
-          <tr><td>So</td><td>Geschlossen</td></tr>
-        </table>
-      </div>
-    </div>
+  <section id="contact" class="section">
+    <h2>Kontakt</h2>
+    <p>Sie erreichen uns per E-Mail: <a href="mailto:info@schneiderei-meli.de">info@schneiderei-meli.de</a></p>
+    <p>Oder besuchen Sie uns direkt vor Ort!</p>
   </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2025 Änderungsschneiderei Meli</p>
-    </div>
+  <footer>
+    <p>&copy; 2025 Änderungsschneiderei Meli – Alle Rechte vorbehalten.</p>
+    <p>Öffnungszeiten: Mo–Fr 09:00 – 18:00 Uhr · Sa 10:00 – 14:00 Uhr</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
