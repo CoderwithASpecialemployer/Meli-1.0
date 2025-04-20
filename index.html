@@ -1,61 +1,126 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Änderungsschneiderei Meli</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
 <body>
-  <header class="hero">
-    <nav class="navbar">
-      <div class="logo">Meli</div>
-      <ul class="nav-links">
-        <li><a href="#about">Über uns</a></li>
-        <li><a href="#services">Leistungen</a></li>
-        <li><a href="#location">Standort</a></li>
-        <li><a href="#contact">Kontakt</a></li>
-      </ul>
-    </nav>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <div class="brand">MELI</div>
+    <button class="nav-toggle" aria-label="Navigation umschalten">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu">
+      <li><a href="#about">Über uns</a></li>
+      <li><a href="#services">Leistungen</a></li>
+      <li><a href="#opening-hours">Öffnungszeiten</a></li>
+      <li><a href="#location">Standort</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Änderungsschneiderei Meli</h1>
-      <p>Stilvolle Passform, meisterhafte Handarbeit</p>
+      <p>Stilvolle Passform & meisterhafte Handarbeit</p>
+      <a href="#contact" class="btn">Jetzt Termin sichern</a>
     </div>
-  </header>
+  </section>
 
-  <section id="about" class="section">
+  <!-- ÜBER UNS -->
+  <section class="section" id="about">
     <h2>Über uns</h2>
-    <p>Mit Liebe zum Detail und langjähriger Erfahrung kümmern wir uns um Ihre Kleidungsstücke. Ihre Zufriedenheit ist unser Maßstab.</p>
+    <p>Wir sind Ihre persönliche Änderungsschneiderei im Herzen Aachens. Modernste Techniken kombiniert mit traditioneller Handwerkskunst bringen Ihre Kleidung wieder in Form – oder machen sie zum Unikat.</p>
   </section>
 
-  <section id="services" class="section parallax">
+  <!-- LEISTUNGEN -->
+  <section class="section" id="services">
     <h2>Unsere Leistungen</h2>
-    <ul>
-      <li>Kleider- und Hosenkürzungen</li>
-      <li>Maßanpassungen</li>
-      <li>Reißverschluss-Reparaturen</li>
-      <li>Maßanfertigungen</li>
-      <li>Abendmode & Brautkleider</li>
+    <div class="grid">
+      <div class="card">
+        <h3>Kürzungen</h3>
+        <p>Exakte Saum‑ und Längenkürzungen für Hosen, Röcke und Kleider.</p>
+      </div>
+      <div class="card">
+        <h3>Maßanpassungen</h3>
+        <p>Perfekte Passform dank professioneller Anpassung an Ihre Maße.</p>
+      </div>
+      <div class="card">
+        <h3>Reparaturen</h3>
+        <p>Reißverschluss‑ und Knopf‑Reparaturen, Flickenarbeiten und mehr.</p>
+      </div>
+      <div class="card">
+        <h3>Maßanfertigung</h3>
+        <p>Individuelle Anfertigung für besondere Anlässe: Brautkleider & Abendmode.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖFFNUNGSZEITEN & AKTIONEN -->
+  <section class="section" id="opening-hours">
+    <h2>Öffnungszeiten</h2>
+    <ul class="hours-list">
+      <li>Sonntag: Geschlossen</li>
+      <li>Montag (Ostermontag): 10:00–13:00, 14:00–18:00</li>
+      <li>Dienstag: 10:00–13:00, 14:00–18:00</li>
+      <li>Mittwoch: 10:00–13:00, 14:00–18:00</li>
+      <li>Donnerstag: 10:00–13:00, 14:00–18:00</li>
+      <li>Freitag: 10:00–13:00, 14:00–18:00</li>
+      <li>Samstag: 10:00–13:00</li>
     </ul>
+    <div class="actions">
+      <button id="shareBtn">Teilen</button>
+      <a href="tel:01775527906" class="callBtn">Anrufen</a>
+    </div>
+    <a href="mailto:info@schneiderei-meli.de?subject=Vorschlag%20Öffnungszeiten" class="suggest-link">
+      Neue Öffnungszeiten vorschlagen
+    </a>
   </section>
 
-  <section id="location" class="section">
+  <!-- STANDORT -->
+  <section class="section" id="location">
     <h2>Unser Standort</h2>
-    <p>Adresse: Musterstraße 123, 52062 Aachen</p>
-    <iframe src="https://maps.google.com/maps?q=Aachen&t=&z=13&ie=UTF8&iwloc=&output=embed"
-            width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    <p>Musterstraße 123, 52062 Aachen</p>
+    <div class="map-wrapper">
+      <iframe
+        src="https://maps.google.com/maps?q=Aachen%20Musterstraße%20123&amp;output=embed"
+        allowfullscreen>
+      </iframe>
+    </div>
   </section>
 
-  <section id="contact" class="section">
+  <!-- KONTAKT -->
+  <section class="section" id="contact">
     <h2>Kontakt</h2>
-    <p>Sie erreichen uns per E-Mail: <a href="mailto:info@schneiderei-meli.de">info@schneiderei-meli.de</a></p>
-    <p>Oder besuchen Sie uns direkt vor Ort!</p>
+    <form class="contact-form">
+      <label>
+        Name
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        E-Mail
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Nachricht
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+      <button type="submit" class="btn">Absenden</button>
+    </form>
   </section>
 
+  <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 Änderungsschneiderei Meli – Alle Rechte vorbehalten.</p>
-    <p>Öffnungszeiten: Mo–Fr 09:00 – 18:00 Uhr · Sa 10:00 – 14:00 Uhr</p>
+    <p>&copy; 2025 Änderungsschneiderei Meli</p>
+    <p>Mo–Fr 09:00–18:00 | Sa 10:00–14:00</p>
   </footer>
+
 </body>
 </html>
