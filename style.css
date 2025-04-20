@@ -1,10 +1,16 @@
+/* =======================
+   Variablen & Reset
+   ======================= */
 :root {
-  --primary: #c62828;
-  --light: #fdfdfd;
-  --dark: #222;
-  --text: #333;
-  --radius: 4px;
-  --transition: 0.3s;
+  /* Erdbeer‑Rot (Strawberry Red): #C83F49  [oai_citation_attribution:9‡encycolorpedia.com](https://encycolorpedia.com/c83f49?utm_source=chatgpt.com) */
+  --primary:   #C83F49;
+  /* Komplementär‑Grün (invertiert): #37C0B6  [oai_citation_attribution:10‡encycolorpedia.com](https://encycolorpedia.com/c83f49?utm_source=chatgpt.com) */
+  --secondary: #37C0B6;
+  --light:     #fdfdfd;
+  --dark:      #222;
+  --text:      #333;
+  --radius:    4px;
+  --transition:0.3s;
 }
 *,
 *::before,
@@ -19,11 +25,13 @@ body {
   line-height: 1.6;
 }
 
-/* NAVIGATION */
+/* =======================
+   NAVIGATION
+   ======================= */
 .navbar {
   position: fixed;
   top: 0; width: 100%;
-  background: rgba(255,255,255,0.9);
+  background: var(--primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,7 +42,7 @@ body {
 .brand {
   font-family: 'Merriweather', serif;
   font-size: 1.5rem;
-  color: var(--primary);
+  color: var(--light);
 }
 .nav-toggle {
   display: none;
@@ -55,15 +63,17 @@ body {
 }
 .nav-menu a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--light);
   padding: 0.5rem;
   transition: color var(--transition);
 }
 .nav-menu a:hover {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
-/* HERO */
+/* =======================
+   HERO
+   ======================= */
 .hero {
   height: 100vh;
   display: flex;
@@ -98,10 +108,12 @@ body {
   transition: background var(--transition);
 }
 .btn:hover {
-  background: #a81b1b;
+  background: var(--secondary);
 }
 
-/* SEKTIONEN */
+/* =======================
+   SEKTIONEN
+   ======================= */
 .section {
   padding: 6rem 1rem;
   max-width: 900px;
@@ -114,7 +126,7 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Grid für Leistungen */
+/* Grid-Layout für Leistungen  [oai_citation_attribution:11‡Wikipedia](https://en.wikipedia.org/wiki/Color_scheme?utm_source=chatgpt.com) [oai_citation_attribution:12‡Wikipedia](https://en.wikipedia.org/wiki/Color_wheel?utm_source=chatgpt.com) */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
@@ -132,7 +144,9 @@ body {
   transform: translateY(-5px);
 }
 
-/* GALERIE */
+/* =======================
+   GALERIE
+   ======================= */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
@@ -146,7 +160,9 @@ body {
   object-fit: cover;
 }
 
-/* ÖFFNUNGSZEITEN & AKTIONEN */
+/* =======================
+   ÖFFNUNGSZEITEN & AKTIONEN
+   ======================= */
 .hours-list {
   list-style: none;
   padding: 0;
@@ -175,7 +191,7 @@ body {
 }
 .actions button:hover,
 .actions .callBtn:hover {
-  background: #a81b1b;
+  background: var(--secondary);
 }
 .suggest-link {
   display: inline-block;
@@ -184,10 +200,12 @@ body {
   color: var(--primary);
 }
 .suggest-link:hover {
-  color: #a81b1b;
+  color: var(--secondary);
 }
 
-/* MAP & FORM */
+/* =======================
+   MAP & FORM
+   ======================= */
 .map-wrapper {
   margin-top: 1rem;
   height: 300px;
@@ -212,13 +230,17 @@ body {
   background: var(--primary); color: #fff; padding: 0.75rem 1.5rem; border: none; border-radius: var(--radius);
 }
 
-/* FOOTER */
+/* =======================
+   FOOTER
+   ======================= */
 footer {
   background: var(--dark); color: #fff; text-align: center; padding: 2rem 1rem;
 }
 
-/* ANIMATIONEN & RESPONSIVE */
-/* Scroll‑Fade‑In */
+/* =======================
+   ANIMATIONEN & RESPONSIVE
+   ======================= */
+/* Scroll‑Fade‑In mit Intersection Observer API  [oai_citation_attribution:13‡MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API?utm_source=chatgpt.com) [oai_citation_attribution:14‡MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserver/IntersectionObserver?utm_source=chatgpt.com) */
 .hidden {
   opacity: 0; transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -226,7 +248,7 @@ footer {
 .visible {
   opacity: 1; transform: none;
 }
-/* Mobile */
+/* Mobile Navigation */
 @media (max-width: 768px) {
   .nav-toggle { display: flex; }
   .nav-menu {
