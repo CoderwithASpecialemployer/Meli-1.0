@@ -1,273 +1,54 @@
-/* =======================
-   Variablen & Reset
-   ======================= */
-:root {
-  --primary: #c62828;
-  --light: #fdfdfd;
-  --dark: #222;
-  --text: #333;
-  --radius: 4px;
-  --transition: 0.3s;
-}
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0; padding: 0;
-}
-body {
-  font-family: 'Open Sans', sans-serif;
-  color: var(--text);
-  background: var(--light);
-  line-height: 1.6;
+// Mobile Menu Toggle
+const toggle = document.querySelector('.nav-toggle');
+const menu   = document.querySelector('.nav-menu');
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('open');
+});
+
+// Scroll‑Fade‑In mit Intersection Observer
+document.addEventListener('DOMContentLoaded', () => {
+  const els = document.querySelectorAll('.section, .hero-content, .card');
+  const obs = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+  els.forEach(el => {
+    el.classList.add('hidden');
+    obs.observe(el);
+  });
+});
+
+// Teilen-Funktion
+const shareBtn = document.getElementById('shareBtn');
+if (shareBtn) {
+  shareBtn.addEventListener('click', async () => {
+    const data = {
+      title: 'Änderungsschneiderei Meli',
+      text: 'Entdecke die Änderungsschneiderei Meli in Aachen!',
+      url: window.location.href
+    };
+    if (navigator.share) {
+      try {
+        await navigator.share(data);
+      } catch (err) {
+        console.error('Teilen abgebrochen', err);
+      }
+    } else {
+      window.prompt('Link kopieren und teilen:', window.location.href);
+    }
+  });
 }
 
-/* =======================
-   NAVIGATION
-   ======================= */
-.navbar {
-  position: fixed;
-  top: 0; left: 0; width: 100%;
-  background: rgba(255,255,255,0.9);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.brand {
-  font-family: 'Merriweather', serif;
-  font-size: 1.5rem;
-  color: var(--primary);
-}
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 4px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-.nav-toggle span {
-  display: block;
-  width: 24px; height: 2px;
-  background: var(--text);
-}
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-.nav-menu a {
-  text-decoration: none;
-  color: var(--text);
-  padding: 0.5rem;
-  transition: color var(--transition);
-}
-.nav-menu a:hover {
-  color: var(--primary);
-}
-
-/* =======================
-   HERO
-   ======================= */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  background: url('assets/images/hero.jpg') center/cover no-repeat;
-}
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-}
-.hero-content {
-  position: relative;
-  text-align: center;
-  color: #fff;
-  max-width: 90%;
-}
-.hero-content h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-.btn {
-  display: inline-block;
-  background: var(--primary);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius);
-  text-decoration: none;
-  transition: background var(--transition);
-}
-.btn:hover {
-  background: #a81b1b;
-}
-
-/* =======================
-   SEKTIONEN
-   ======================= */
-.section {
-  padding: 6rem 1rem;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-}
-.section h2 {
-  font-family: 'Merriweather', serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-/* Grid für Leistungen */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.card {
-  background: #fff;
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform var(--transition);
-}
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* === Öffnungszeiten & Aktionen === */
-.hours-list {
-  list-style: none;
-  padding: 0;
-  max-width: 400px;
-  margin: 0.5rem auto 1rem;
-}
-.hours-list li {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
-.actions {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-.actions button,
-.actions .callBtn {
-  padding: 0.75rem 1.5rem;
-  background: var(--primary);
-  color: #fff;
-  border: none;
-  border-radius: var(--radius);
-  text-decoration: none;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background var(--transition);
-}
-.actions button:hover,
-.actions .callBtn:hover {
-  background: #a81b1b;
-}
-.suggest-link {
-  display: inline-block;
-  margin-top: 0.5rem;
-  text-decoration: underline;
-  color: var(--primary);
-  font-weight: 500;
-}
-.suggest-link:hover {
-  color: #a81b1b;
-}
-
-/* =======================
-   MAP & FORM
-   ======================= */
-.map-wrapper {
-  margin-top: 1rem;
-  height: 300px;
-  overflow: hidden;
-  border-radius: var(--radius);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-.map-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: 0;
-}
-.contact-form {
-  display: grid;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-.contact-form label {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  font-weight: 500;
-}
-.contact-form input,
-.contact-form textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: var(--radius);
-  font: inherit;
-}
-.contact-form button {
-  width: max-content;
-  justify-self: center;
-}
-
-/* =======================
-   FOOTER
-   ======================= */
-footer {
-  background: var(--dark);
-  color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-/* =======================
-   ANIMATIONEN & RESPONSIVE
-   ======================= */
-/* Scroll‑Fade‑In */
-.hidden {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.visible {
-  opacity: 1;
-  transform: none;
-}
-/* Mobile Navigation */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: flex;
-  }
-  .nav-menu {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: #fff;
-    flex-direction: column;
-    width: 200px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  .nav-menu.open {
-    max-height: 300px;
-  }
+// Kontaktformular‑Mockup
+const form = document.querySelector('.contact-form');
+if (form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Danke für Ihre Nachricht! Wir melden uns bald bei Ihnen.');
+    form.reset();
+  });
 }
